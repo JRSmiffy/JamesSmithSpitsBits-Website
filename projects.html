@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <!-- LOADING OPTIMIZATION -->
+
+
+        <!-- JS LINK UP -->
+
+        <script type="text/javascript" src="./js/home.js"></script>
+
+
+        <!-- JS Div Changer -->
+
+        <script>
+
+        function ActivateOverview() {
+            document.getElementById("projects-overview").style.display="grid";
+            document.getElementById("projects-overview").style.animation="fadein 2s";
+            document.getElementById("projects-applications").style.display="none";
+            document.getElementById("projects-publicspeaking").style.display="none";
+            document.getElementById("btn-overview").style.color="#ffffff";
+            document.getElementById("btn-apps").style.color="#3B3B3D";
+            document.getElementById("btn-publicspeaking").style.color="#3B3B3D";
+            document.getElementById("btn-overview-mobile").style.color="#ffffff";
+            document.getElementById("btn-apps-mobile").style.color="#3B3B3D";
+            document.getElementById("btn-publicspeaking-mobile").style.color="#3B3B3D";
+
+           }
+
+        function ActivateApplications() {
+           document.getElementById("projects-overview").style.display="none";
+           document.getElementById("projects-applications").style.display="grid";
+           document.getElementById("projects-applications").style.animation="fadein 2s";
+           document.getElementById("projects-publicspeaking").style.display="none";
+           document.getElementById("btn-overview").style.color="#3B3B3D";
+           document.getElementById("btn-apps").style.color="#ffffff";
+           document.getElementById("btn-publicspeaking").style.color="#3B3B3D";
+           document.getElementById("btn-overview-mobile").style.color="#3B3B3D";
+           document.getElementById("btn-apps-mobile").style.color="#ffffff";
+           document.getElementById("btn-publicspeaking-mobile").style.color="#3B3B3D";
+          }
+
+          function ActivatePublicSpeaking() {
+             document.getElementById("projects-overview").style.display="none";
+             document.getElementById("projects-applications").style.display="none";
+             document.getElementById("projects-publicspeaking").style.display="grid";
+             document.getElementById("projects-publicspeaking").style.animation="fadein 2s";
+             document.getElementById("btn-overview").style.color="#3B3B3D";
+             document.getElementById("btn-apps").style.color="#3B3B3D";
+             document.getElementById("btn-publicspeaking").style.color="#ffffff";
+             document.getElementById("btn-overview-mobile").style.color="#3B3B3D";
+             document.getElementById("btn-apps-mobile").style.color="#3B3B3D";
+             document.getElementById("btn-publicspeaking-mobile").style.color="#ffffff";
+            }
+
+
+        </script>
+
+        <script>
+
+        $(document).ready(function () {
+        $(document).on("scroll", onScroll);
+
+        //smoothscroll
+        $('a[href^="#"]').on('click', function (e) {
+            e.preventDefault();
+            $(document).off("scroll");
+
+            $('a').each(function () {
+                $(this).removeClass('active');
+            })
+            $(this).addClass('active');
+
+            var target = this.hash,
+                menu = target;
+            $target = $(target);
+            $('html, body').stop().animate({
+                'scrollTop': $target.offset().top+2
+            }, 2000, 'swing', function () {
+                window.location.hash = target;
+                $(document).on("scroll", onScroll);
+            });
+        });
+        });
+
+        function onScroll(event){
+        var scrollPos = $(document).scrollTop();
+        $('header a').each(function () {
+            var currLink = $(this);
+            var refElement = $(currLink.attr("href"));
+            if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                $('header a').removeClass("active");
+                currLink.addClass("active");
+            }
+            else{
+                currLink.removeClass("active");
+            }
+        });
+        }
+
+        </script>
+
+        <!-- META DATA -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="theme-color" content= "#A166AB">
+
+        <!-- CSS LINK UP -->
+        <link rel="stylesheet" media="screen" href="./css/homeStyler.css" />
+
+        <!-- Font Awesome -->
+
+        <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
+
+        <!-- Google Font Import -->
+
+        <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+
+        <!-- Favicon -->
+
+        <link rel="shortcut icon" href="./img/favicon2.ico" type="image/x-icon">
+
+
+        <!-- Begin Jekyll SEO tag v2.3.0 -->
+<title> Projects | JSSB</title>
+<meta property="og:title" content="Home" />
+<meta property="og:locale" content="en_UK" />
+<meta name="description" content="My Personal Website" />
+<meta property="og:description" content="My Personal Website" />
+
+
+  </head>
+
+<body>
+  <header class ="site-header">
+    <div class ="site-header-super">
+    <div class = "site-header-logo">
+      <a href="home.html">
+        <h1 class = "JSSB"> JSSB </h1>
+      </a>
+    </div>
+    <div class = "site-header-nav">
+      <nav>
+        <div class="nav-table">
+          <div class="nav-cell">
+            <a class ="nav-anchor nav-anchor0" href="tuition.html">Tuition</a>
+          </div>
+          <div class="nav-cell">
+            <a class ="nav-anchor nav-anchor1" href="webdev.html">Websites</a>
+          </div>
+          <div class="nav-cell">
+            <a class ="nav-anchor nav-anchor2 current-page" href="projects.html">Projects</a>
+          </div>
+          <div class="nav-cell">
+            <a class ="nav-anchor nav-anchor3 jamessmith" href="jamessmith.html">James Smith</a>
+            <a class ="nav-anchor nav-anchor3 james" href="jamessmith.html">James</a>
+          </div>
+
+      </nav>
+    </div>
+    <div class = "site-header-contact">
+      <a class="btn-contact" href="#ContactAnchor">Contact Me</a>
+    </div>
+
+    <div class="site-nav-mobile">
+      <a class ="nav-anchor0 nav-anchor-mobile" href="tuition.html">Tuition</a>
+      <a class ="nav-anchor1 nav-anchor-mobile" href="webdev.html">Web Dev</a>
+      <a class ="nav-anchor0 nav-anchor-mobile current-page" href="projects.html">Projects</a>
+      <a class ="nav-anchor1 nav-anchor-mobile" href="jamessmith.html">James Smith</a>
+    </div>
+  </div>
+  </div>
+  <!-- <div class="header-trap-lower"></div> -->
+  </header>
+
+
+  <main>
+    <header class="secondary-showcase">
+      <h1 class="fade-on-load"> PROJECTS</h1>
+    </header>
+
+    <section class="secondary-banner">
+      <div class="Row">
+        <div class="Column">
+          <button id="btn-overview" onclick="ActivateOverview()"> OVERVIEW</button>
+        </div>
+        <div class="Column">
+          <button id="btn-apps" onclick="ActivateApplications()"> APPLICATIONS</button>
+        </div>
+        <div class="Column">
+          <button id="btn-publicspeaking" onclick="ActivatePublicSpeaking()"> PUBLIC SPEAKING</button>
+        </div>
+      </div>
+    </section>
+    <div class="secondary-banner-mobile">
+      <button id="btn-overview-mobile" onclick="ActivateOverview()"> OVERVIEW</button>
+      <button id="btn-apps-mobile" onclick="ActivateApplications()"> APPLICATIONS</button>
+      <button id="btn-publicspeaking-mobile" onclick="ActivatePublicSpeaking()"> PUBLIC SPEAKING</button>
+    </div>
+
+
+    <section class="secondary-content">
+      <div id="projects-overview">
+        <h1> OVERVIEW </h1>
+        <div class="secondary-content-grids">
+          <div class="dead-space"></div>
+          <div class="sct-col col1">
+            <img src="./img/globe0.png" style="width:50%; height:auto;">
+          </div>
+          <div class="dead-space"></div>
+          <div class="sct-col col2">
+            <h2> I am making the world a better place.</h2>
+            <p> That's the intention, at least. I want to improve people's lives. On a global scale. That is the ambition.</p>
+            <p> I have started small. Hold on, real small. I cannot wait to see where it ends up. Look around this page and give me feedback on any of the projects you hate or rate.</p>
+          </div>
+          </div>
+          <div class="dead-space"></div>
+        </div>
+      </div>
+      <div id="projects-applications">
+        <h1> APPLICATIONS </h1>
+        <div class="secondary-content-grids">
+          <div class="dead-space"></div>
+          <div class="sct-col col1">
+
+          </div>
+          <div class="dead-space"></div>
+          <div class="sct-col col2">
+            <h2> UNDER CONSTRUCTION </h2>
+            <p> Lorem Ipsum dolor... </p>
+          </div>
+          <div class="dead-space"></div>
+        </div>
+      </div>
+      <div id="projects-publicspeaking">
+        <h1> PUBLIC SPEAKING </h1>
+        <div class="secondary-content-grids">
+          <div class="dead-space"></div>
+          <div class="sct-col col1">
+
+          </div>
+          <div class="dead-space"></div>
+          <div class="sct-col col2">
+            <h2> UNDER CONSTRUCTION </h2>
+            <p> Lorem Ipsum dolor... </p>
+          </div>
+          <div class="dead-space"></div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+    <footer id="ContactAnchor">
+          <div class="trap-upper"></div>
+          <div class="footer-banner">
+            <div class="footer-banner-soc-med">
+              <form method="get" action="https://www.facebook.com/JamesSmithSpitsBits/" target="_blank">
+                <button class="btn-facebook btn-soc-med" type ='submit' style="float: right;"><i class="fa fa-facebook" aria-hidden="true"></i> JSSB </button>
+              </form>
+            </div>
+            <div class="footer-banner-soc-med">
+              <form method="get" action="https://www.youtube.com/channel/UCQyzZqXbntAKMDilFWmVong" target="_blank">
+                <button class="btn-facebook btn-soc-med" type ='submit'><i class="fa fa-youtube-play" aria-hidden="true"></i> JSSB </button>
+              </form>
+            </div>
+            <div class="footer-banner-soc-med">
+              <form method="get" action="https://www.youtube.com/channel/UC_SwTGVma6_QfxhzyTj66Zg" target="_blank">
+                <button class="btn-facebook btn-soc-med" type ='submit' style="float: left;"><i class="fa fa-youtube-play" aria-hidden="true"></i> JSSTH </button>
+              </form>
+            </div>
+          </div>
+          <div class="footer-banner-mobile">
+            <a class ="btn-soc-med-mobile" href="https://www.facebook.com/JamesSmithSpitsBits/"><i class="fa fa-facebook" aria-hidden="true"></i> JSSB </a>
+            <a class ="btn-soc-med-mobile" href="https://www.youtube.com/channel/UCQyzZqXbntAKMDilFWmVong"><i class="fa fa-youtube-play" aria-hidden="true"></i> JSSB </a>
+            <a class ="btn-soc-med-mobile" href="https://www.youtube.com/channel/UC_SwTGVma6_QfxhzyTj66Zg"><i class="fa fa-youtube-play" aria-hidden="true"></i> JSSTH </a>
+          </div>
+
+          <div class="footer-content-super"><div class="footer-content-BGC">
+          <div class="trap-lower"></div>
+          <div class="footer-content">
+            <div class ="footer-info">
+              <h1> CONTACT ME </h1>
+              <hr>
+              <div class="footer-info-table">
+                <div class="dead-space"></div>
+                  <div class ="fit-col fit1">
+                    <p> Phone </p>
+                    <p> Email </p>
+                    <p> Skype </p>
+                  </div>
+                <div class="dead-space"></div>
+                <div class ="fit-col fit2">
+                  <div class="fit-background">
+                    <p> 07380 947 079 </p>
+                    <p> jamessmithspitsbits@gmail.com </p>
+                    <p> Ask for more details </p>
+                  <div class="dead-space"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer-signup">
+                <h2> DO NOT SUBSCRIBE TO MY NEWSLETTER </h2>
+                <form class="footer-signup-form">
+                    <div class = "fsf-dead-space"></div>
+                    <input type="email" placeholder="Enter Email">
+                    <div class = "fsf-dead-space"></div>
+                    <button type="submit" class="btn-signup"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></button>
+                    <div class = "fsf-dead-space"></div>
+                </form>
+              </div>
+            </div>
+            <div class ="footer-empty">
+            </div>
+          </div>
+          <div class="trap-upper"></div>
+        </div></div>
+        <div class ="footer-legal">
+            <ul>
+              <li><a>Terms and Conditions</a></li>
+              <li><a>Security Policy</a></li>
+              <li><a>© 2017 James Smith Spits Bits, Inc.</a></li>
+            </ul>
+        </div>
+      </footer>
+
+  </main>
+</body>
+</html>
